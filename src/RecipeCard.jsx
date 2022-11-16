@@ -18,11 +18,11 @@ function RecipeCard({
           />
         </div>
 
-        <h3 className="pt-5 text-[14px] font-normal text-gray-600 block">
+        <h3 className="pt-5 text-4xl font-normal text-green-600 block pb-2">
           {heading}
         </h3>
 
-        <p className="font-normal text-gray-500 cursor-pointer text-lg duration-300 transition hover:text-[#FA5252] mt-2">
+        <p className="font-normal text-green-500 cursor-pointer text-lg duration-300 transition hover:text-[#FA5252] mt-2">
           {description}
         </p>
       </div>
@@ -32,26 +32,32 @@ function RecipeCard({
 
 function RecipeCardPresenation() {
   return (
-    <div className="grid grid-cols-1 gap-8 p-3 pl-24 ml-3 w-full">
+    <div className="grid grid-cols-2 sm:grid-cols-1 md:grid-cols-2 gap-8 p-3 pl-24 ml-3 w-full">
       <RecipeCard
-        className="bg-[#fcf4ff]"
+        className="bg-gray-700"
         heading="Chicken Dinnah"
         description="Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam euismod volutpat."
-        thumbnailSrc="https://source.unsplash.com/random/300x300"
+        thumbnailSrc="https://source.unsplash.com/random/300x300?food"
       />
 
       <RecipeCard
-        className="bg-[#fefaf0]"
+        className="bg-gray-700"
         heading="Heading"
         description="Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam euismod volutpat."
-        thumbnailSrc="https://source.unsplash.com/random/300x300"
+        thumbnailSrc="https://source.unsplash.com/random/300x300?beverage"
       />
 
       <RecipeCard
-        className="bg-[#f3faff]"
+        className="bg-gray-700"
         heading="Heading"
         description="Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam euismod volutpat."
-        thumbnailSrc="https://source.unsplash.com/random/300x300"
+        thumbnailSrc="https://source.unsplash.com/random/300x300?dessert"
+      />
+      <RecipeCard
+        className="bg-gray-700"
+        heading="Heading"
+        description="Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam euismod volutpat."
+        thumbnailSrc="https://source.unsplash.com/random/300x300?pasta"
       />
     </div>
   );

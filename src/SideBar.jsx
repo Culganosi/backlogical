@@ -8,7 +8,7 @@ import {
 
 const SideBar = () => {
   return (
-    <div className="fixed z-10 left-0 h-screen w-24 m-0 flex flex-col bg-white dark:bg-gray-900 shadow-lg">
+    <div className="fixed z-20 left-0 h-full w-24 m-0 flex flex-col bg-white dark:bg-gray-900 shadow-lg">
       <SideBarIcon icon={<GiKnifeFork size="38" />} text={"Home"} />
       <Divider />
       <SideBarIcon

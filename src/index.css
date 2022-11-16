@@ -29,7 +29,7 @@
     bg-gray-300 dark:bg-gray-900
     h-24 w-full m-0 top-0 
     shadow-lg
-
+    z-10
   }
     .content {
     @apply flex justify-center h-screen 
