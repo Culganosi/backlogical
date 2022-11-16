@@ -1,11 +1,9 @@
-import React from "react";
-import RecipeCard from "./RecipeCard";
-import { RecipeCardPresenation } from "./RecipeCard";
+import { GameCardPresentation } from "./GameCard";
 
 function MainContainer() {
   return (
     <div className="content">
-      <RecipeCardPresenation />
+      <GameCardPresentation />
     </div>
   );
 }

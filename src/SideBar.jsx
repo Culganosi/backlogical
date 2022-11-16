@@ -1,23 +1,18 @@
-import {
-  GiKnifeFork,
-  GiCoffeeCup,
-  GiChickenOven,
-  GiFishCooked,
-  GiHamShank,
-} from "react-icons/gi";
+import { FaXbox, FaSteam, FaPlaystation, FaHome } from "react-icons/fa";
+import { SiNintendoswitch } from "react-icons/si";
 
 const SideBar = () => {
   return (
     <div className="fixed z-20 left-0 h-full w-24 m-0 flex flex-col bg-white dark:bg-gray-900 shadow-lg">
-      <SideBarIcon icon={<GiKnifeFork size="38" />} text={"Home"} />
+      <SideBarIcon icon={<FaHome size="38" />} text={"Home"} />
       <Divider />
+      <SideBarIcon icon={<FaXbox size="38" />} text={"Xbox"} />
+      <SideBarIcon icon={<FaSteam size="38" />} text={"PC/Steam"} />
       <SideBarIcon
-        icon={<GiChickenOven size="38" />}
-        text={"Chicken Recipes"}
+        icon={<SiNintendoswitch size="38" />}
+        text={"Nintendo Switch"}
       />
-      <SideBarIcon icon={<GiFishCooked size="38" />} text={"Fish Recipes"} />
-      <SideBarIcon icon={<GiHamShank size="38" />} text={"Ham Recipes"} />
-      <SideBarIcon icon={<GiCoffeeCup size="38" />} text={"Beverages"} />
+      <SideBarIcon icon={<FaPlaystation size="38" />} text={"Playstation"} />
     </div>
   );
 };
