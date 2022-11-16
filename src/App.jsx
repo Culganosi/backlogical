@@ -5,10 +5,10 @@ import Logo from "./components/Logo";
 
 export default function App() {
   return (
-    <div className="flex">
+    <div className="flex flex-col">
       <SideBar />
-      <div className="main-container">
         <Header />
+      <div className="main-container">
         <Logo />
         {/* <MainContainer /> */}
       </div>

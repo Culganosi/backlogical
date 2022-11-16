@@ -15,6 +15,10 @@ function FormInput() {
     setListItems([newListItem, ...listItems]);
     setText("");
   };
+
+  const deleteListItem = (id) => {
+    setListItems(listItems.filter((item) => item.id !== id));
+  };
   return (
     <>
       <form
@@ -30,7 +34,7 @@ function FormInput() {
           onChange={(e) => setText(e.target.value)}
         />
       </form>
-      <TodoList listItems={listItems} />
+      <TodoList listItems={listItems} deleteListItem={deleteListItem} />
     </>
   );
 }

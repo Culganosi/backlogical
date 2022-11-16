@@ -21,7 +21,7 @@
     z-10
   }
   .main-container {
-    @apply flex flex-col justify-center w-full h-fit
+    @apply flex flex-col w-full h-screen
     bg-gray-300 dark:bg-gray-800
   }
   .header {
