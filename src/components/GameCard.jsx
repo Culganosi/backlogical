@@ -5,9 +5,9 @@ function GameCard({
   className,
 }) {
   return (
-    <div className="flex justify-center h-fit">
+    <div className="flex justify-center">
       <div
-        className={`flex flex-col items-center w-full h-fit rounded-lg p-6 shadow-sm ${className}`}
+        className={`flex flex-col items-center w-full h-full rounded-lg p-6 shadow-sm ${className}`}
       >
         <div className="overflow-hidden rounded-lg">
           <img
@@ -27,7 +27,7 @@ function GameCard({
 
 function GameCardPresentation() {
   return (
-    <div className="grid grid-cols-2 sm:grid-cols-1 md:grid-cols-2 gap-8 p-3 pl-24 w-full m-24">
+    <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-8 p-3 pl-24 w-full m-24">
       <GameCard
         className="bg-gray-700"
         heading="Xbox"
