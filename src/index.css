@@ -33,9 +33,10 @@
   }
     .content {
     @apply flex justify-center
-    bg-gray-300 dark:bg-gray-800
-  
-  
+    bg-gray-300 dark:bg-gray-800  
+  }
+  .todo-list:last-child {
+    border-bottom: none;
   }
   /* .main-list {
     @apply flex flex-col items-center 

@@ -30,7 +30,7 @@ function FormInput() {
           onChange={(e) => setText(e.target.value)}
         />
       </form>
-      <TodoList />
+      <TodoList listItems={listItems} />
     </>
   );
 }
