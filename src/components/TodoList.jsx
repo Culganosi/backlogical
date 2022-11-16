@@ -4,7 +4,7 @@ function TodoList({ listItems, deleteListItem }) {
     <>
       {listItems.length && (
         <article className="pl-24">
-          <ul className="bg-gray-700 mx-5 rounded-lg mt-10 w-72">
+          <ul className="bg-gray-700 mx-5 rounded-lg mt-10 sm:max-w-xl sm:mx-auto">
             {listItems.map(({ id, title }) => (
               <ul className="flex items-center justify-between px-5 py-3 border-b border-gray-600">
                 <li

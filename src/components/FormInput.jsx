@@ -1,10 +1,19 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import TodoList from "./TodoList";
 import { v4 as uuidv4 } from "uuid";
 
+const getLocalStorage = () => {
+  let listItems = localStorage.getItem("listItems");
+
+  if (listItems) {
+    return JSON.parse(localStorage.getItem("listItems"));
+  } else {
+    return [];
+  }
+};
 function FormInput() {
   const [text, setText] = useState("");
-  const [listItems, setListItems] = useState([]);
+  const [listItems, setListItems] = useState(getLocalStorage());
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -19,6 +28,11 @@ function FormInput() {
   const deleteListItem = (id) => {
     setListItems(listItems.filter((item) => item.id !== id));
   };
+
+  useEffect(() => {
+    localStorage.setItem("listItems", JSON.stringify(listItems));
+  }, [listItems]);
+
   return (
     <>
       <form
