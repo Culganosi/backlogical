@@ -16,6 +16,9 @@ module.exports = {
         secondary: "#5865f2",
         gray: colors.trueGray,
       },
+      fontFamily: {
+        "press-start": [`"Press Start 2P"`, "cursive"],
+      },
     },
   },
   plugins: [],
