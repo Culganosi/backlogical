@@ -8,6 +8,7 @@ import Playstation from "./components/Playstation";
 import Dashboard from "./components/Dashboard";
 import Login from "./components/Login";
 import useToken from "./hooks/useToken";
+import Register from "./components/Register";
 
 export default function App() {
   const { token, setToken } = useToken();
@@ -22,6 +23,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Dashboard />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
         <Route path="/xbox" element={<Xbox />} />
         <Route path="/steam" element={<Steam />} />
         <Route path="/nintendo" element={<Nintendo />} />

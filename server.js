@@ -1,8 +1,16 @@
 const express = require("express");
 const cors = require("cors");
+const mysql = require("mysql");
 const app = express();
 
 app.use(cors());
+
+const db = mysql.createConnection({
+  user: "root",
+  host: "localhost",
+  password: "password",
+  database: "LoginSystem",
+});
 
 app.use("/login", (req, res) => {
   res.send({
