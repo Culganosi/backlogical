@@ -7,11 +7,10 @@ import Steam from "./components/Steam";
 import Playstation from "./components/Playstation";
 import Dashboard from "./components/Dashboard";
 import Login from "./components/Login";
-import Preferences from "./Preferences";
-import { useState } from "react";
+import useToken from "./hooks/useToken";
 
 export default function App() {
-  const [token, setToken] = useState();
+  const { token, setToken } = useToken();
 
   if (!token) {
     return <Login setToken={setToken} />;
