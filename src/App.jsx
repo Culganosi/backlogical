@@ -11,11 +11,11 @@ import useToken from "./hooks/useToken";
 import Register from "./components/Register";
 
 export default function App() {
-  const { token, setToken } = useToken();
+  // const { token, setToken } = useToken();
 
-  if (!token) {
-    return <Login setToken={setToken} />;
-  }
+  // if (!token) {
+  //   return <Login setToken={setToken} />;
+  // }
   return (
     <>
       <Header />

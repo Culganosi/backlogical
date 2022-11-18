@@ -1,12 +1,29 @@
 import { useState } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 export default function Register() {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const [usernameReg, setUsernameReg] = useState("");
+  const [passwordReg, setPasswordReg] = useState("");
+  const navigate = useNavigate();
+  const register = () => {
+    axios
+      .post("http://localhost:8080/register", {
+        username: usernameReg,
+        password: passwordReg,
+      })
+      .then((res) => {
+        console.log(res);
+        navigate("/");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
+
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  // };
 
   return (
     <div className="flex flex-col items-center h-screen">
@@ -15,7 +32,7 @@ export default function Register() {
       </div>
       <div class="w-full max-w-xs">
         <form
-          onSubmit={handleSubmit}
+          // onSubmit={handleSubmit}
           class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
         >
           <div class="mb-4">
@@ -30,8 +47,8 @@ export default function Register() {
               id="username"
               type="text"
               placeholder="Username"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
+              // value={usernameReg}
+              onChange={(e) => setUsernameReg(e.target.value)}
             />
           </div>
           <div class="mb-6">
@@ -46,15 +63,16 @@ export default function Register() {
               id="password"
               type="password"
               placeholder="********"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              // value={passwordReg}
+              onChange={(e) => setPasswordReg(e.target.value)}
             />
             <p class="text-red-500 text-xs italic">Please choose a password.</p>
           </div>
           <div class="flex items-center justify-between">
             <button
               class="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-              type="submit"
+              type="button"
+              onClick={register}
               // disabled={!validateForm()}
             >
               Create Account
