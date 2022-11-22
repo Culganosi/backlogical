@@ -33,6 +33,9 @@ function Xbox() {
       )}
       {gamedata && <h3 className="text-center pl-24">{gamedata[0].name}</h3>}
       {gamedata && <h3 className="text-center pl-24">{gamedata[0].summary}</h3>}
+      {/* {gamedata && (
+        <h3 className="text-center pl-24">{gamedata[0].genres}</h3>
+      )} */}
     </div>
   );
 }

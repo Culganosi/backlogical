@@ -17,11 +17,11 @@ export default function App() {
   // }
   return (
     <>
-      <Header />
-      <SideBar />
+      {/* <Header />
+      <SideBar /> */}
       <Routes>
         <Route path="/" element={<Dashboard />} />
-        <Route path="/getGames" element={<Games />} />
+        <Route path="/games" element={<Games />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/xbox" element={<Xbox />} />
