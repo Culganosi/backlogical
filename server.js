@@ -5,6 +5,7 @@ require("dotenv").config();
 const app = express();
 const bcrypt = require("bcrypt");
 const saltRounds = 6;
+const axios = require("axios");
 
 app.use(express.json());
 app.use(cors());
@@ -54,4 +55,25 @@ app.post("/login", (req, res) => {
     }
   );
 });
+
+app.post("/getGames", (req, res) => {
+  axios({
+    url: "https://api.igdb.com/v4/games/?search=suikoden&fields=id,name,summary,cover.url&expand=cover",
+    method: "POST",
+    headers: {
+      Accept: "application/json",
+      "Client-ID": process.env.CLIENT_ID,
+      Authorization: process.env.ACCESS_TOKEN,
+    },
+    // data: "fields name, summary;",
+  })
+    .then((response) => {
+      console.log(response.data);
+      res.json(response.data);
+    })
+    .catch((err) => {
+      res.send(err);
+    });
+});
+
 app.listen(8080, () => console.log("API Running on http://localhost:8080"));
