@@ -5,10 +5,11 @@ import Xbox from "./components/Xbox";
 import Nintendo from "./components/Nintendo";
 import Steam from "./components/Steam";
 import Playstation from "./components/Playstation";
-import Dashboard from "./components/Dashboard";
+// import Dashboard from "./components/Dashboard";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import Games from "./components/Games";
+import SearchBar from "./components/SearchBar";
 export default function App() {
   // const { token, setToken } = useToken();
 
@@ -17,10 +18,11 @@ export default function App() {
   // }
   return (
     <>
+      <SearchBar />
       {/* <Header />
       <SideBar /> */}
       <Routes>
-        <Route path="/" element={<Dashboard />} />
+        {/* <Route path="/" element={<Dashboard />} /> */}
         <Route path="/games" element={<Games />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />

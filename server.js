@@ -57,15 +57,18 @@ app.post("/login", (req, res) => {
 });
 
 app.post("/getGames", (req, res) => {
+  const input = req.body.params.input;
+  console.log(req.body.params.input);
   axios({
-    url: "https://api.igdb.com/v4/games/?search=suikoden&fields=id,name,summary,cover.url&expand=cover",
+    url: "https://api.igdb.com/v4/games/",
     method: "POST",
     headers: {
       Accept: "application/json",
       "Client-ID": process.env.CLIENT_ID,
       Authorization: process.env.ACCESS_TOKEN,
     },
-    // data: "fields name, summary;",
+    data: `search "${input}";fields id, name, summary, cover.*;`,
+    // data: `search "${input}"; fields name, summary, platforms.abbreviation, cover.*, screenshots.*; limit 5;`,
   })
     .then((response) => {
       console.log(response.data);
@@ -77,3 +80,5 @@ app.post("/getGames", (req, res) => {
 });
 
 app.listen(8080, () => console.log("API Running on http://localhost:8080"));
+
+// url: "https://api.igdb.com/v4/games/?search=suikoden&fields=id,name,summary,cover.url&expand=cover",
