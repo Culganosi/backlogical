@@ -67,7 +67,7 @@ app.post("/getGames", (req, res) => {
       "Client-ID": process.env.CLIENT_ID,
       Authorization: process.env.ACCESS_TOKEN,
     },
-    data: `search "${input}";fields id, name, summary, cover.*;`,
+    data: `search "${input}";fields id, name, summary, platforms.abbreviation, cover.*, genres.*, release_dates.date;`,
     // data: `search "${input}"; fields name, summary, platforms.abbreviation, cover.*, screenshots.*; limit 5;`,
   })
     .then((response) => {
