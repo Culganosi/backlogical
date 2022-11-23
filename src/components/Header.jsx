@@ -1,15 +1,15 @@
-import React from "react";
+import SearchBar from "./SearchBar";
 
 function Header() {
   return (
-    <div className="header">
-      <h1 className="font-press-start text-4xl text-purple-700 italic tracking-widest text-justify pl-24">
-        - - - Backlogical - - -
-      </h1>
-      <Divider />
+    <div className="font-press-start flex items-center justify-between mx-12">
+      <h1 className="text-purple-600">Backlogical</h1>
+      <div>
+        <SearchBar />
+      </div>
+      <h1 className="text-purple-600">DarkMode</h1>
     </div>
   );
 }
 
-const Divider = () => <hr className="sidebar-hr" />;
 export default Header;
