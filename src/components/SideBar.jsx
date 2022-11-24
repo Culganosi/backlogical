@@ -5,7 +5,7 @@ import { SiNintendoswitch } from "react-icons/si";
 const SideBar = () => {
   return (
     <div className="fixed z-20 left-0 h-full w-24 m-0 flex flex-col bg-white dark:bg-gray-900 shadow-lg">
-      <Link to="/Games">
+      <Link to="/">
         <SideBarIcon icon={<FaHome size="38" color="white" />} text={"Home"} />
       </Link>
       <Divider />

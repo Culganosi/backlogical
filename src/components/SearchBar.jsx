@@ -1,30 +1,11 @@
-import { useState, useEffect } from "react";
-import axios from "axios";
+import { useContext } from "react";
+import { SearchContext } from "../Contexts/SearchContext";
+import { Link } from "react-router-dom";
 
-function SearchBar() {
-  const [games, setGames] = useState([]);
-  const [input, setInput] = useState("");
-
-  const handleSubmit = () => {
-    const fetchData = async () => {
-      axios
-        .post("http://localhost:8080/getGames", {
-          params: {
-            input: input,
-          },
-        })
-
-        .then((response) => {
-          console.log(response.data);
-          setGames(response.data);
-        })
-        .catch((error) => console.error(`Error: ${error}`));
-    };
-    fetchData();
-  };
-
+function SearchTest() {
+  const { setInput, input, handleSubmit } = useContext(SearchContext);
   return (
-    <div className="w-full mt-4">
+    <div className="w-full">
       <div class="relative">
         <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
           <svg
@@ -45,58 +26,24 @@ function SearchBar() {
         </div>
         <input
           name="input"
-          className="block w-[42rem] p-4 px-10 mb-10 text-md text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-purple-500 focus:border-purple-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-purple-500 dark:focus:border-purple-500 focus:outline-none border-2 focus:border-2"
+          className="block w-[42rem] p-4 px-10 text-md text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-purple-500 focus:border-purple-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-purple-500 dark:focus:border-purple-500 focus:outline-none border-2 focus:border-2"
           placeholder="Enter Game Title"
           onChange={(event) => setInput(event.target.value)}
           value={input}
         />
-        <button
-          onClick={handleSubmit}
-          type="submit"
-          class="text-white absolute right-2.5 bottom-2.5 bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-800"
-        >
-          Search Games
-        </button>
+        <Link to="/result">
+          <button
+            onClick={handleSubmit}
+            type="submit"
+            class="text-white absolute right-1.5 bottom-2.5 mr-4 bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-800"
+          >
+            Search Games
+          </button>
+        </Link>
       </div>
-
-      <div className="flex flex-col items-center ">
-        {games.map((game) => {
-          const date = new Date(game.release_dates[0].date * 1000);
-          const options = {
-            year: "numeric",
-            month: "long",
-            day: "numeric",
-          };
-
-          const releaseDate = date.toLocaleDateString("en-US", options);
-          return (
-            <div
-              key={game.id}
-              className="flex flex-col justify-center items-center font-press-start pl-24"
-            >
-              <img
-                src={game.cover.url.replace("t_thumb", "t_cover_big")}
-                alt={game.name}
-              />
-              <h1 className="text-lg mb-1 p-2">{game.name}</h1>
-              <h4 className="mb-1 p-2 text-s">{game.genres[0].name}</h4>
-              <h4 className="mb-1 p-2 text-s">{releaseDate}</h4>
-              <div className="flex">
-                {game.platforms.map((platform) => {
-                  return (
-                    <p className="p-2 text-xs italic">
-                      {platform.abbreviation}
-                    </p>
-                  );
-                })}
-              </div>
-              {/* <p className="mb-1 p-4 text-xs">{game.summary}</p> */}
-            </div>
-          );
-        })}
-      </div>
+      {/* <SearchResult games={games} /> */}
     </div>
   );
 }
 
-export default SearchBar;
+export default SearchTest;
