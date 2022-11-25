@@ -6,9 +6,27 @@ const app = express();
 const bcrypt = require("bcrypt");
 const saltRounds = 6;
 const axios = require("axios");
+const session = require("express-session");
 
 app.use(express.json());
-app.use(cors());
+app.use(
+  cors({
+    origin: "http://localhost:3000",
+    methods: ["POST", "PUT", "GET", "OPTIONS", "HEAD"],
+    credentials: true,
+  })
+);
+app.use(
+  session({
+    name: "sid",
+    secret: process.env.SESS_SECRET,
+    saveUninitialized: false,
+    resave: false,
+    cookie: {
+      secure: false,
+    },
+  })
+);
 
 const db = mysql.createConnection({
   user: process.env.DB_USER,
@@ -29,6 +47,9 @@ app.post("/register", async (req, res) => {
       if (err) {
         console.log(err);
       } else {
+        req.session.user = {
+          username: req.body.username,
+        };
         res.send(results);
       }
     }
@@ -48,12 +69,21 @@ app.post("/login", (req, res) => {
       }
       if (results.length > 0) {
         await bcrypt.compare(password, results[0].password);
-        res.send(results);
+        req.session.user = {
+          username: req.body.username,
+        };
+        res.send("Login Successful!");
       } else {
-        res.send({ message: "Wrong credentials" });
+        // res.send({ message: "Failed to login" });
+        res.redirect("/login");
       }
     }
   );
+});
+
+app.get("/logout", (req, res) => {
+  res.clearCookie("username");
+  res.redirect("/");
 });
 
 app.post("/getGames", (req, res) => {

@@ -10,10 +10,19 @@ export default function Login() {
 
   const login = () => {
     axios
-      .post("http://localhost:8080/login", {
-        username: username,
-        password: password,
-      })
+      .post(
+        "http://localhost:8080/login",
+        {
+          username: username,
+          password: password,
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+          withCredentials: true,
+        }
+      )
       .then((response) => {
         if (response.data.message) {
           setLoginStatus(response.data.message);

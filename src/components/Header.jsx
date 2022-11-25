@@ -9,7 +9,7 @@ function Header(input, setInput, handleSubmit, games, setGames) {
     <div className="font-press-start flex items-center justify-between mx-6 mb-6">
       <div>
         <Link to="/">
-          <h1 className="text-purple-600 text-6xl mt-10 text-center ml-8">
+          <h1 className="text-purple-600 text-4xl mt-10 ml-8 mr-16">
             Backlogical
           </h1>
         </Link>
@@ -23,7 +23,10 @@ function Header(input, setInput, handleSubmit, games, setGames) {
           setGames={setGames}
         />
         <Link to="/login">
-          <h1 className="text-purple-600 text-s">Login</h1>
+          <h1 className="text-purple-600 text-s px-8">Login</h1>
+        </Link>
+        <Link to="/logout">
+          <h1 className="text-purple-600 text-s px-8">Logout</h1>
         </Link>
       </div>
     </div>
