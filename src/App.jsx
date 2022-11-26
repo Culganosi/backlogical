@@ -4,13 +4,12 @@ import axios from "axios";
 import Header from "./components/Header";
 import Xbox from "./components/Xbox";
 import Steam from "./components/Steam";
-
 import Dashboard from "./components/Dashboard";
 import Login from "./components/Login";
 import Register from "./components/Register";
-import SearchBar from "./components/SearchBar";
 import SearchResult from "./components/SearchResult";
 import { SearchContext } from "./Contexts/SearchContext";
+import GameDetails from "./components/GameDetails";
 export default function App() {
   // const { token, setToken } = useToken();
 
@@ -55,8 +54,8 @@ export default function App() {
         <Route path="/" element={<Dashboard games={games} />} />
         <Route path="/result" element={<SearchResult games={games} />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/logout" element={<Dashboard />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/gamedetails" element={<GameDetails />} />
         <Route path="/xbox" element={<Xbox />} />
         <Route path="/steam" element={<Steam />} />
       </Routes>

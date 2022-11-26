@@ -82,8 +82,11 @@ app.post("/login", (req, res) => {
 });
 
 app.get("/logout", (req, res) => {
-  res.clearCookie("username");
-  res.redirect("/");
+  console.log("Logging out");
+  if (req.session) {
+    req.session.destroy();
+  }
+  res.send("Logged out!");
 });
 
 app.post("/getGames", (req, res) => {

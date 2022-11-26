@@ -3,8 +3,15 @@ import { FaXbox, FaSteam, FaPlaystation, FaHome } from "react-icons/fa";
 import { SiNintendoswitch } from "react-icons/si";
 import { BsSearch } from "react-icons/bs";
 import SearchTest from "./SearchBar";
-
+import axios from "axios";
 function Header(input, setInput, handleSubmit, games, setGames) {
+  const handleLogout = () => {
+    axios.get("http://localhost:8080/logout").then((response) => {
+      if (response) {
+        console.log(response);
+      }
+    });
+  };
   return (
     <div className="font-press-start flex items-center justify-between mx-6 mb-6">
       <div>
@@ -25,8 +32,13 @@ function Header(input, setInput, handleSubmit, games, setGames) {
         <Link to="/login">
           <h1 className="text-purple-600 text-s px-8">Login</h1>
         </Link>
-        <Link to="/logout">
-          <h1 className="text-purple-600 text-s px-8">Logout</h1>
+        <Link to="/login">
+          <button
+            onClick={handleLogout}
+            className="text-purple-600 text-s px-8"
+          >
+            Logout
+          </button>
         </Link>
       </div>
     </div>

@@ -38,8 +38,11 @@ export default function Login() {
   };
 
   return (
-    <div className="flex flex-col justify-center items-center h-screen">
-      <div class="w-full max-w-xs">
+    <div className="flex flex-col items-center h-screen">
+      <h1 className="flex justify-center items-center font-press-start text-purple-600 text-5xl mt-24">
+        Log In
+      </h1>
+      <div class="w-full max-w-xs mt-24">
         {/* <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"> */}
         <div class="mb-4">
           <label

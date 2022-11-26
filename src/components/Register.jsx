@@ -27,7 +27,10 @@ export default function Register() {
 
   return (
     <div className="flex flex-col items-center h-screen">
-      <div className="text-purple-700 text-2xl font-press-start mb-24 mt-24 tracking-wider">
+      <h1 className="flex justify-center items-center font-press-start text-purple-600 text-5xl mt-24">
+        Register
+      </h1>
+      <div className="text-purple-700 text-2xl font-press-start mb-24 mt-24">
         Create your account
       </div>
       <div class="w-full max-w-xs">
