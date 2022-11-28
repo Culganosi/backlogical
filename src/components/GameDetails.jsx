@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+
+
 function GameDetails({ games }) {
   // const releaseDate = date.toLocaleDateString("en-US", options);
   return (
@@ -24,13 +26,13 @@ function GameDetails({ games }) {
           );
         })}
       </div>
-      <div className="flex flex-col items-center border-solid border-2 border-purple-500 rounded-lg px-12 pb-6 mb-12">
-        <h3 className="font-press-start underline">Screenshots</h3>
-        <div className="flex gap-6">
+      <div className="flex flex-col items-center bg-gray-800 border-solid border-2 border-purple-100 rounded-lg px-12 pb-6 mb-12 mx-18 w-3/4">
+        <h3 className="font-press-start underline mt-2">Screenshots</h3>
+        <div className="flex flex-wrap gap-6 justify-center mt-2">
           {games[0].screenshots.slice(0, 3).map((screenshots) => {
             return (
               <img
-                className="h-auto"
+                className="w-1/4"
                 src={screenshots.url.replace("t_thumb", "t_screenshot_med")}
               />
             );
