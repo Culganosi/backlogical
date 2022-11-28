@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 function ResultTest({ games }) {
   console.log(games);
   return (
-    <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 xs:grid-cols-1 gap-4 bg-gray-800 p-12">
+    <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 xs:grid-cols-1 gap-4 bg-gray-800 p-12 mt-40">
       {games.map((game) => {
         const date = new Date(game.release_dates[0].date * 1000);
         const options = {
@@ -39,14 +39,6 @@ function ResultTest({ games }) {
             <button class="px-3 py-2 text-sm font-press-start text-center text-white bg-purple-700 rounded-b-lg hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-800 ">
               Add to Backlog
             </button>
-
-            {/* {game.platforms.map((platform) => {
-                return (
-                  <p className="p-2 text-xs italic">
-                  {platform.abbreviation}
-                  </p>
-                  );
-                })} */}
           </div>
         );
       })}

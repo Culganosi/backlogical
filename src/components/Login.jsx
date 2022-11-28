@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 export default function Login() {
   const [username, setUsername] = useState("");
@@ -39,65 +40,64 @@ export default function Login() {
 
   return (
     <div className="flex flex-col items-center h-screen">
-      <h1 className="flex justify-center items-center font-press-start text-purple-600 text-5xl mt-24">
+      <h1 className="flex justify-center items-center font-press-start text-purple-600 text-4xl mt-72">
         Log In
       </h1>
-      <div class="w-full max-w-xs mt-24">
-        {/* <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"> */}
-        <div class="mb-4">
+      <div className="w-full max-w-xs mt-24">
+        <div className="mb-4">
           <label
-            class="block text-purple-700 text-lg font-press-start mb-4 tracking-wider"
+            className="block text-purple-700 text-lg font-press-start mb-4 tracking-wider"
             for="username"
           >
             Username
           </label>
           <input
-            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             id="username"
             type="text"
             placeholder="Username"
             onChange={(e) => setUsername(e.target.value)}
           />
         </div>
-        <div class="mb-6">
+        <div className="mb-6">
           <label
-            class="block text-purple-700 text-lg font-press-start mb-4 tracking-wider"
+            className="block text-purple-700 text-lg font-press-start mb-4 tracking-wider"
             for="password"
           >
             Password
           </label>
           <input
-            class="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+            className="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
             id="password"
             type="password"
             placeholder="********"
             onChange={(e) => setPassword(e.target.value)}
           />
-          <p class="text-red-500 text-xs italic">Please choose a password.</p>
+          <p className="text-red-500 text-xs italic">
+            Please choose a password.
+          </p>
         </div>
-        <div class="flex items-center justify-between">
+        <div className="flex items-center justify-between">
           <button
-            class="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
             onClick={login}
-            // disabled={!validateForm()}
           >
             Sign In
           </button>
-          <a
-            class="inline-block align-baseline font-bold text-sm text-purple-500 hover:text-purple-800"
-            href="#"
-          >
-            Forgot Password?
-          </a>
+          <Link to="/register">
+            <a
+              className="inline-block align-baseline font-bold text-sm text-purple-500 hover:text-purple-800"
+              href="#"
+            >
+              Create Account
+            </a>
+          </Link>
         </div>
-        {/* </form> */}
-        <p class="text-center text-gray-500 text-xs">
+        <p className="text-center text-gray-500 text-xs py-4">
           &copy;2022 Narshe Mines Corp. All rights reserved.
         </p>
       </div>
-      <h1 className="text-green-600 font-press-start text-lg mt-10">
-        {loginStatus}
-      </h1>
+      <h1 className="text-green-600 font-press-start text-lg">{loginStatus}</h1>
     </div>
   );
 }

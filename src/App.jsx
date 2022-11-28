@@ -55,7 +55,7 @@ export default function App() {
         <Route path="/result" element={<SearchResult games={games} />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/gamedetails" element={<GameDetails />} />
+        <Route path="/gamedetails" element={<GameDetails games={games} />} />
         <Route path="/xbox" element={<Xbox />} />
         <Route path="/steam" element={<Steam />} />
       </Routes>

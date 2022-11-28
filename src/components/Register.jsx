@@ -27,7 +27,7 @@ export default function Register() {
 
   return (
     <div className="flex flex-col items-center h-screen">
-      <h1 className="flex justify-center items-center font-press-start text-purple-600 text-5xl mt-24">
+      <h1 className="flex justify-center items-center font-press-start text-purple-600 text-4xl mt-72">
         Register
       </h1>
       <div className="text-purple-700 text-2xl font-press-start mb-24 mt-24">

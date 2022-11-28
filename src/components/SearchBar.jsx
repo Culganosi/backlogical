@@ -2,10 +2,10 @@ import { useContext } from "react";
 import { SearchContext } from "../Contexts/SearchContext";
 import { Link } from "react-router-dom";
 
-function SearchTest() {
+function SearchBar() {
   const { setInput, input, handleSubmit } = useContext(SearchContext);
   return (
-    <div className="w-full">
+    <div className="">
       <div class="relative">
         <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
           <svg
@@ -46,4 +46,4 @@ function SearchTest() {
   );
 }
 
-export default SearchTest;
+export default SearchBar;
