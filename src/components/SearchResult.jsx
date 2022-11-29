@@ -22,7 +22,7 @@ function ResultTest({ games }) {
             key={game?.id}
             className="flex flex-col hover:scale-105 justify-between max-w-sm m-auto w-72 mt-6 mb-6 bg-white border border-gray-200 rounded-lg dark:bg-gray-800 dark:border-gray-700"
           >
-            <Link to="/gamedetails">
+            <Link to={`/game/${game.id}`}>
               <img
                 className="rounded-t-lg w-full hover:opacity-50"
                 src={
@@ -44,7 +44,6 @@ function ResultTest({ games }) {
                 <h4 className="text-xs max-w-s p-2 mt-6">{releaseDate}</h4>
               </div>
             </div>
-
             <button class="px-3 py-2 text-sm font-press-start text-center text-white bg-purple-700 rounded-b-lg hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-800 ">
               Add to Backlog
             </button>

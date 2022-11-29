@@ -91,7 +91,7 @@ app.get("/logout", (req, res) => {
 
 app.post("/getGames", (req, res) => {
   const input = req.body.params.input;
-  console.log(req.body.params.input);
+  // console.log(req.body.params.input);
   axios({
     url: "https://api.igdb.com/v4/games/",
     method: "POST",
@@ -104,7 +104,31 @@ app.post("/getGames", (req, res) => {
     // data: `search "${input}"; fields name, summary, platforms.abbreviation, platform_logos.*, cover.*, screenshots.*; limit 5;`,
   })
     .then((response) => {
-      console.log(response.data);
+      // console.log(response.data);
+      res.json(response.data);
+    })
+    .catch((err) => {
+      res.send(err);
+    });
+});
+
+app.post("/getDetails", (req, res) => {
+  const id = req.body.params.id;
+  console.log(req.body.params.id);
+  axios({
+    url: "https://api.igdb.com/v4/games/",
+    method: "POST",
+    headers: {
+      Accept: "application/json",
+      "Client-ID": process.env.CLIENT_ID,
+      Authorization: process.env.ACCESS_TOKEN,
+    },
+    // data: `fields name, summary, platforms.abbreviation, cover.*, genres.*, screenshots.*, release_dates.date; where id=${id}`,
+    data: `fields name, summary, platforms.abbreviation, cover.*, genres.*, screenshots.*, release_dates.date; where id=${id};`,
+    // data: `search "${input}"; fields name, summary, platforms.abbreviation, platform_logos.*, cover.*, screenshots.*; limit 5;`,
+  })
+    .then((response) => {
+      // console.log(response.data);
       res.json(response.data);
     })
     .catch((err) => {
