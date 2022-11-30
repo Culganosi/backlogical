@@ -136,6 +136,23 @@ app.post("/getDetails", (req, res) => {
     });
 });
 
+app.post("/addGame", (req, res) => {
+  const gameTitle = req.body.gameTitle;
+  console.log(gameTitle);
+
+  db.query(
+    "INSERT INTO backlog (title) VALUES (?)",
+    [gameTitle],
+    (err, results) => {
+      if (err) {
+        console.log(err);
+      } else {
+        res.send(results);
+      }
+    }
+  );
+});
+
 app.listen(8080, () => console.log("API Running on http://localhost:8080"));
 
 // url: "https://api.igdb.com/v4/games/?search=suikoden&fields=id,name,summary,cover.url&expand=cover",

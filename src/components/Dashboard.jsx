@@ -1,3 +1,4 @@
+import FormInput from "./FormInput";
 import Xbox from "./Xbox";
 
 function Dashboard() {
@@ -22,7 +23,8 @@ function Dashboard() {
         You can also click on a game and see a more detailed view including
         screenshots and trailers
       </p>
-      <Xbox />
+      {/* <Xbox /> */}
+      <FormInput />
     </div>
   );
 }

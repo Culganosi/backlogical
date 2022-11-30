@@ -2,7 +2,23 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 function GameDetails() {
+  const navigate = useNavigate();
+  const addGame = () => {
+    axios
+      .post("http://localhost:8080/addGame", {
+        gameTitle: currentGame[0].name,
+      })
+      .then((res) => {
+        console.log(res);
+        // Add something like "Games successfully added to backlog"
+        // navigate("/");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
   const [currentGame, setCurrentGame] = useState(null);
   const { id } = useParams();
   console.log({ id });
@@ -88,7 +104,13 @@ function GameDetails() {
               : null}
           </div>
         </div>
-        <div className="flex justify-center">
+        <div className="flex justify-center gap-12">
+          <button
+            onClick={addGame}
+            class="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded mb-6 "
+          >
+            Add Game to Backlog
+          </button>
           <Link to="/result">
             <button class="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded mb-6 ">
               Back to Search Results
