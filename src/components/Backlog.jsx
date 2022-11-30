@@ -15,6 +15,9 @@ function Backlog() {
           console.log(res.data);
           setListItems(res.data);
           setDeleteMsg(true);
+          setTimeout(() => {
+            setDeleteMsg(false);
+          }, 2000);
         });
       })
       .catch((err) => {
@@ -29,9 +32,6 @@ function Backlog() {
         .then((res) => {
           console.log(res.data);
           setListItems(res.data);
-          setTimeout(() => {
-            setDeleteMsg(false);
-          }, 3000);
         })
         .catch((err) => {
           console.log(err);
