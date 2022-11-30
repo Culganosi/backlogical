@@ -4,6 +4,12 @@ import { Link } from "react-router-dom";
 
 function SearchBar() {
   const { setInput, input, handleSubmit } = useContext(SearchContext);
+  const handleKeypress = (e) => {
+    if (e.key === "Enter") {
+      <Link to="/result"></Link>;
+      handleSubmit();
+    }
+  };
   return (
     <div className="">
       <div class="relative">
@@ -26,22 +32,22 @@ function SearchBar() {
         </div>
         <input
           name="input"
-          className="block w-[42rem] p-4 px-10 text-md text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-purple-500 focus:border-purple-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-purple-500 dark:focus:border-purple-500 focus:outline-none border-2 focus:border-2"
-          placeholder="Enter Game Title"
+          className="p-3 px-10 text-md text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-purple-500 focus:border-purple-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-purple-500 dark:focus:border-purple-500 focus:outline-none border-2 focus:border-2"
+          placeholder="Search Games"
           onChange={(event) => setInput(event.target.value)}
           value={input}
+          onKeyPress={handleKeypress}
         />
         <Link to="/result">
           <button
             onClick={handleSubmit}
             type="submit"
-            class="text-white absolute right-1.5 bottom-2.5 mr-4 bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-800"
+            class="text-white absolute right-0 bottom-2.5 mr-2 bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm px-3 py-1 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-800"
           >
-            Search Games
+            Search
           </button>
         </Link>
       </div>
-      {/* <SearchResult games={games} /> */}
     </div>
   );
 }
