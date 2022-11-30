@@ -30,7 +30,6 @@ export default function App() {
         })
 
         .then((response) => {
-          console.log(response.data);
           setGames(response.data);
         })
         .catch((error) => console.error(`Error: ${error}`));

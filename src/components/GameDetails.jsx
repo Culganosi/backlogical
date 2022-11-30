@@ -27,12 +27,7 @@ function GameDetails() {
   }, []);
   // const releaseDate = date.toLocaleDateString("en-US", options);
   return (
-    <div className="flex flex-col items-center justify-center mt-60">
-      <Link to="/result">
-        <button class="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded mb-6">
-          Back to Search Results
-        </button>
-      </Link>
+    <div className="flex flex-col items-center justify-center mt-32">
       <img
         src={
           currentGame
@@ -74,6 +69,11 @@ function GameDetails() {
             : null}
         </div> */}
       </div>
+      <Link to="/result">
+        <button class="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded mb-6">
+          Back to Search Results
+        </button>
+      </Link>
     </div>
   );
 }

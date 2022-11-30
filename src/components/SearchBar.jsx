@@ -6,7 +6,6 @@ function SearchBar() {
   const { setInput, input, handleSubmit } = useContext(SearchContext);
   const handleKeypress = (e) => {
     if (e.key === "Enter") {
-      <Link to="/result"></Link>;
       handleSubmit();
     }
   };
