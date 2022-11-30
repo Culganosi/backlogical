@@ -1,3 +1,4 @@
+import Backlog from "./Backlog";
 import FormInput from "./FormInput";
 import Xbox from "./Xbox";
 
@@ -24,7 +25,7 @@ function Dashboard() {
         screenshots and trailers
       </p>
       {/* <Xbox /> */}
-      <FormInput />
+      <Backlog />
     </div>
   );
 }

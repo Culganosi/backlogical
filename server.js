@@ -12,7 +12,7 @@ app.use(express.json());
 app.use(
   cors({
     origin: "http://localhost:3000",
-    methods: ["POST", "PUT", "GET", "OPTIONS", "HEAD"],
+    methods: ["POST", "PUT", "GET", "OPTIONS", "HEAD", "DELETE"],
     credentials: true,
   })
 );
@@ -151,6 +151,28 @@ app.post("/addGame", (req, res) => {
       }
     }
   );
+});
+
+app.get("/backlog", (req, res) => {
+  db.query("SELECT title, id FROM backlog", (err, results) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.send(JSON.stringify(results));
+    }
+  });
+});
+
+app.delete("/deleteGame/:id", (req, res) => {
+  const id = req.params.id;
+  // res.status(200).send("DELETE request to homepage");
+  db.query(`DELETE FROM backlog WHERE id = ${id}`, (err, results) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.sendStatus(200);
+    }
+  });
 });
 
 app.listen(8080, () => console.log("API Running on http://localhost:8080"));
