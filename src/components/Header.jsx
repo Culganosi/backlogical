@@ -24,9 +24,9 @@ function Header(input, setInput, handleSubmit, games, setGames) {
             setGames={setGames}
           />
 
-          <Link to="/login">
+          {/* <Link to="/login">
             <button className="text-purple-600 text-xs">Login</button>
-          </Link>
+          </Link> */}
           <Link to="/login">
             <button onClick={handleLogout} className="text-purple-600 text-xs">
               Logout

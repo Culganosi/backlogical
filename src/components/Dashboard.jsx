@@ -4,7 +4,7 @@ import Xbox from "./Xbox";
 
 function Dashboard() {
   return (
-    <div className="flex flex-col bg-gray-800 h-screen items-center font-press-start">
+    <div className="flex flex-col bg-gray-800 h-screen justify-center items-center font-press-start mt-24">
       <h1 className="text-purple-600 mt-10 text-3xl">
         Welcome to Backlogical!
       </h1>
@@ -24,7 +24,6 @@ function Dashboard() {
         You can also click on a game and see a more detailed view including
         screenshots and trailers
       </p>
-      {/* <Xbox /> */}
       <Backlog />
     </div>
   );
