@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
-export default function Login() {
+export default function Login({ setAuth }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [loginStatus, setLoginStatus] = useState("");
@@ -28,9 +28,11 @@ export default function Login() {
         if (response.data.message) {
           setLoginStatus(response.data.message);
         } else {
-          setLoginStatus(response.data[0].username);
+          // setLoginStatus(response.data[0].username);
+          setAuth(true);
+          let auth = true;
+          localStorage.setItem("auth", JSON.stringify(auth));
         }
-        console.log(response.data);
         navigate("/");
       })
       .catch((err) => {
