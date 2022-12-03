@@ -1,12 +1,10 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import SearchBar from "./SearchBar";
 
 function Header(input, setInput, handleSubmit, games, setGames) {
   const handleLogout = () => {
     console.log("Logout");
-
     // CLEAR DATA FROM STORAGE
-
     localStorage.clear();
     window.location.reload();
   };
@@ -29,10 +27,11 @@ function Header(input, setInput, handleSubmit, games, setGames) {
           {/* <Link to="/login">
             <button className="text-purple-600 text-xs">Login</button>
           </Link> */}
-
-          <button onClick={handleLogout} className="text-purple-600 text-xs">
-            Logout
-          </button>
+          {!localStorage.getItem("auth") === false ? (
+            <button onClick={handleLogout} className="text-purple-600 text-xs">
+              Logout
+            </button>
+          ) : null}
         </div>
       </div>
     </nav>

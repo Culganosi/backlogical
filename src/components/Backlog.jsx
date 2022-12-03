@@ -44,7 +44,10 @@ function Backlog() {
       <ul className="bg-gray-700 rounded-lg mt-10 sm:max-w-xl sm:mx-auto">
         {listItems.map((listItem) => {
           return (
-            <ul className="flex items-center justify-between px-5 py-3 border-b border-gray-600">
+            <ul
+              key={listItem.id}
+              className="flex items-center justify-between px-5 py-3 border-b border-gray-600"
+            >
               <li className="text-green-500 tracking-wider font-press-start">
                 {listItem.title}
               </li>
