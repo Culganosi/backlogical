@@ -32,6 +32,11 @@ export default function Login({ setAuth }) {
           setAuth(true);
           let auth = true;
           localStorage.setItem("auth", JSON.stringify(auth));
+          console.log(response.data);
+          localStorage.setItem(
+            "user",
+            JSON.stringify(response.data[0].username)
+          );
         }
         navigate("/");
       })

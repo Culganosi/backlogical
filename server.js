@@ -72,7 +72,7 @@ app.post("/login", (req, res) => {
         req.session.user = {
           username: req.body.username,
         };
-        res.send("Login Successful!");
+        res.send(results);
       } else {
         // res.send({ message: "Failed to login" });
         res.redirect("/login");

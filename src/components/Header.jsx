@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import SearchBar from "./SearchBar";
 
 function Header(input, setInput, handleSubmit, games, setGames) {
+  const user = JSON.parse(localStorage.getItem("user"));
+
   const handleLogout = () => {
     console.log("Logout");
     // CLEAR DATA FROM STORAGE
@@ -27,10 +29,16 @@ function Header(input, setInput, handleSubmit, games, setGames) {
           {/* <Link to="/login">
             <button className="text-purple-600 text-xs">Login</button>
           </Link> */}
-          {!localStorage.getItem("auth") === false ? (
-            <button onClick={handleLogout} className="text-purple-600 text-xs">
-              Logout
-            </button>
+          {localStorage.getItem("user") ? (
+            <>
+              <h3>Logged in as</h3>
+              <button
+                onClick={handleLogout}
+                className="text-purple-600 text-lg"
+              >
+                {user}
+              </button>
+            </>
           ) : null}
         </div>
       </div>
