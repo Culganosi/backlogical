@@ -51,7 +51,8 @@ function GameDetails() {
               ? currentGame[0].screenshots[0].url.replace("t_thumb", "t_1080p")
               : null
           }
-          className="w-full h-[28rem] mt-24 blur-sm"
+          // ADD A MAX-WIDTH
+          className="w-full h-[28rem] mt-24 blur-xs"
         />
         <div className="flex flex-col items-center justify-center -m-64 mb-2">
           <img

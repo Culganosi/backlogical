@@ -49,6 +49,15 @@ function Backlog() {
               className="flex items-center justify-between px-5 py-3 border-b border-2 dark:border-gray-600"
             >
               <li className="text-green-500 tracking-wider font-press-start">
+                <img
+                  className="rounded-t-lg w-full hover:opacity-50"
+                  src={
+                    listItem.cover
+                      ? listItem.cover.url.replace("t_thumb", "t_cover_big")
+                      : null
+                  }
+                  alt={listItem?.name}
+                />
                 {listItem.title}
               </li>
               <button

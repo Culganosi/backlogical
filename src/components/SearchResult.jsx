@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-function ResultTest({ games }) {
+function SearchResult({ games }) {
   return (
     <div className="transition-colors duration-300">
       <h1 className="font-press-start text-purple-600  text-center text-xl mt-28 mb-12">
@@ -56,4 +56,4 @@ function ResultTest({ games }) {
   );
 }
 
-export default ResultTest;
+export default SearchResult;
