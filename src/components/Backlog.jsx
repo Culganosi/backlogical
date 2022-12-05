@@ -40,20 +40,20 @@ function Backlog() {
     getBacklog().catch(console.error);
   }, []);
   return (
-    <div className="">
-      <ul className="bg-gray-700 rounded-lg mt-10 sm:max-w-xl sm:mx-auto">
+    <div className="transition-colors duration-300">
+      <ul className="dark:bg-gray-700 rounded-lg mt-10 sm:max-w-xl sm:mx-auto border-4">
         {listItems.map((listItem) => {
           return (
             <ul
               key={listItem.id}
-              className="flex items-center justify-between px-5 py-3 border-b border-gray-600"
+              className="flex items-center justify-between px-5 py-3 border-b border-2 dark:border-gray-600"
             >
               <li className="text-green-500 tracking-wider font-press-start">
                 {listItem.title}
               </li>
               <button
                 onClick={() => handleDelete(listItem.id)}
-                className="text-lg text-red-400"
+                className="text-xl text-red-400 hover:text-red-500 hover:text-2xl -mr-2"
               >
                 <IoCloseCircle />
               </button>

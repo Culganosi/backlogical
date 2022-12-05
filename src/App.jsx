@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { Route, Routes, Navigate } from "react-router-dom";
 import axios from "axios";
 import Header from "./components/Header";
-import Xbox from "./components/Xbox";
 import Dashboard from "./components/Dashboard";
 import Login from "./components/Login";
 import Register from "./components/Register";
@@ -11,6 +10,7 @@ import { SearchContext } from "./Contexts/SearchContext";
 import GameDetails from "./components/GameDetails";
 
 export default function App() {
+  const [darkToggle, setDarkToggle] = useState(false);
   const [games, setGames] = useState([]);
   const [input, setInput] = useState("");
   const [isAuthenticated, setIsAuthenticated] = useState(
@@ -81,7 +81,6 @@ export default function App() {
           element={isAuthenticated ? <Navigate replace to="/" /> : <Register />}
         />
         <Route path="/game/:id" element={<GameDetails games={games} />} />
-        <Route path="/xbox" element={<Xbox />} />
       </Routes>
     </>
   );

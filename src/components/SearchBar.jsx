@@ -10,7 +10,7 @@ function SearchBar() {
     }
   };
   return (
-    <div className="">
+    <div className="transition-colors duration-300">
       <div class="relative">
         <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
           <svg

@@ -2,11 +2,11 @@ import { Link } from "react-router-dom";
 
 function ResultTest({ games }) {
   return (
-    <div>
-      <h1 className="font-press-start text-purple-600 text-center text-xl mt-28 mb-12">
+    <div className="transition-colors duration-300">
+      <h1 className="font-press-start text-purple-600  text-center text-xl mt-28 mb-12">
         Search Results
       </h1>
-      <div className="grid xl:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 xs:grid-cols-1 gap-8 bg-gray-800 py-6 px-12 mx-16 rounded-lg">
+      <div className="grid xl:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 xs:grid-cols-1 gap-8 dark:bg-gray-700 py-6 px-12 mx-16 rounded-lg">
         {games.map((game) => {
           const date = new Date(
             game.release_dates ? game.release_dates[0].date * 1000 : null

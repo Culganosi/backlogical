@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import SearchBar from "./SearchBar";
+import Toggle from "./Toggle";
 
 function Header(input, setInput, handleSubmit, games, setGames) {
   const user = JSON.parse(localStorage.getItem("user"));
@@ -12,7 +13,7 @@ function Header(input, setInput, handleSubmit, games, setGames) {
   };
 
   return (
-    <nav class="px-2 sm:px-4 py-2.5 dark:bg-gray-800 fixed w-full z-20 top-0 left-0 border-b border-gray-200 dark:border-gray-600">
+    <nav class="px-2 sm:px-4 py-2.5 transition-colors duration-300 dark:bg-gray-800 fixed w-full z-20 top-0 left-0 border-b border-gray-200 dark:border-gray-600">
       <div className="flex items-center justify-between font-press-start max-w-screen-xl px-4 md:px-6 py-2.5 mx-auto">
         <Link to="/">
           <h1 className=" text-purple-600 text-2xl">Backlogical</h1>
@@ -31,7 +32,7 @@ function Header(input, setInput, handleSubmit, games, setGames) {
           </Link> */}
           {localStorage.getItem("user") ? (
             <>
-              <h3>Logged in as</h3>
+              <h3 className="dark:text-white ">Logged in as</h3>
               <button
                 onClick={handleLogout}
                 className="text-purple-600 text-lg"
@@ -41,6 +42,7 @@ function Header(input, setInput, handleSubmit, games, setGames) {
             </>
           ) : null}
         </div>
+        <Toggle />
       </div>
     </nav>
   );

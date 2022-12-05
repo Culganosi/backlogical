@@ -3,45 +3,5 @@
 @tailwind utilities;
 
 @layer components {
-  .sidebar-icon {
-    @apply relative flex items-center justify-center h-20 w-20 mt-2 mb-2 mx-auto shadow-lg
-    bg-gray-800
-    hover:bg-neutral-700
-    hover:text-white
-    rounded-3xl hover:rounded-xl
-    transition-all duration-300 ease-linear
-    cursor-pointer
-    
-  }
-  .sidebar-tooltip {
-    @apply absolute w-auto p-2 m-2 min-w-max left-14 rounded-md shadow-md
-    text-white bg-gray-900 
-    text-xs font-bold 
-    transition-all duration-100 scale-0 origin-left
-    z-10
-  }
-  /* .main-container {
-    @apply flex flex-col w-full h-screen
-    bg-gray-300 dark:bg-gray-800
-  } */
-  .header {
-    @apply sticky flex flex-row items-center justify-center
-    bg-gray-300 dark:bg-gray-900
-    h-24 w-full m-0 top-0 
-    shadow-lg
-    z-10
-  }
-    .content {
-    @apply flex justify-center
-    bg-gray-300 dark:bg-gray-800  
-  }
-  .todo-list:last-child {
-    border-bottom: none;
-  }
-  /* .main-list {
-    @apply flex flex-col items-center 
-    h-full w-full 
-    mt-0 ml-0 mx-auto px-0 pb-12 
-    overflow-y-scroll;
-  } */ 
+
 }
