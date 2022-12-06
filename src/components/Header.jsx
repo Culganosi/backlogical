@@ -18,7 +18,7 @@ function Header(input, setInput, handleSubmit, games, setGames) {
         <Link to="/">
           <h1 className=" text-purple-600 text-2xl">Backlogical</h1>
         </Link>
-        <div className="flex items-center gap-6">
+        <div className="flex items-center">
           <SearchBar
             input={input}
             setInput={setInput}
@@ -27,21 +27,21 @@ function Header(input, setInput, handleSubmit, games, setGames) {
             setGames={setGames}
           />
 
-          {/* <Link to="/login">
-            <button className="text-purple-600 text-xs">Login</button>
-          </Link> */}
-          {localStorage.getItem("user") ? (
-            <>
-              <h3 className="dark:text-white ">Logged in as</h3>
-              <button
-                onClick={handleLogout}
-                className="text-purple-600 text-lg"
-              >
-                {user}
-              </button>
-            </>
-          ) : null}
+          <div class="b animate-pulse mx-auto h-16 w-64 flex justify-center items-center">
+            <div class="i h-12 w-56 bg-purple-600 items-center rounded-2xl shadow-md cursor-pointer absolute overflow-hidden transform hover:scale-x-110 hover:scale-y-105 transition duration-300 ease-out"></div>
+            <button class="text-center text-white font-semibold z-10 pointer-events-none">
+              Add Game to Backlog
+            </button>
+          </div>
         </div>
+        {localStorage.getItem("user") ? (
+          <>
+            <button onClick={handleLogout} className="text-purple-600 text-lg">
+              {user}
+            </button>
+          </>
+        ) : null}
+
         <Toggle />
       </div>
     </nav>

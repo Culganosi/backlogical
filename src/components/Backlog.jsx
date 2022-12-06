@@ -41,14 +41,14 @@ function Backlog() {
   }, []);
   return (
     <div className="transition-colors duration-300">
-      <ul className="dark:bg-gray-700 rounded-lg mt-10 sm:max-w-xl sm:mx-auto border-4">
+      <ul className="dark:bg-gray-700 rounded-lg mt-6 sm:max-w-6xl sm:mx-auto border-4">
         {listItems.map((listItem) => {
           return (
             <ul
               key={listItem.id}
               className="flex items-center justify-between px-5 py-3 border-b border-2 dark:border-gray-600"
             >
-              <li className="text-green-500 tracking-wider font-press-start">
+              <li className="text-purple-600 tracking-wider font-press-start">
                 <img
                   className="rounded-t-lg w-full hover:opacity-50"
                   src={
