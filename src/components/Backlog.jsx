@@ -1,11 +1,12 @@
 import axios from "axios";
-import { list } from "postcss";
+import StarRating from "./StarRating";
 import { useEffect, useState } from "react";
 import { IoCloseCircle } from "react-icons/io5";
 
 function Backlog() {
   const [listItems, setListItems] = useState([]);
   const [deleteMsg, setDeleteMsg] = useState(false);
+  const [rating, setRating] = useState(0);
 
   const handleDelete = (id) => {
     axios
@@ -60,6 +61,10 @@ function Backlog() {
                 />
                 {listItem.title}
               </li>
+              <StarRating
+                rating={rating}
+                onRating={(rate) => setRating(rate)}
+              />
               <button
                 onClick={() => handleDelete(listItem.id)}
                 className="text-xl text-red-400 hover:text-red-500 hover:text-2xl -mr-2"
