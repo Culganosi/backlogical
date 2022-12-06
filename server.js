@@ -191,7 +191,7 @@ app.post("/highestRatedSwitch", async (req, res) => {
       "Client-ID": process.env.CLIENT_ID,
       Authorization: process.env.ACCESS_TOKEN,
     },
-    data: `fields name, rating,  cover.url; limit 5; where platforms = (130) & rating >= 90; sort rating desc;`,
+    data: `fields name, rating,  cover.url; limit 5; where platforms = (19) & rating >= 90; sort rating desc;`,
   })
     .then((response) => {
       // console.log(response.data);

@@ -21,7 +21,7 @@ function TopSwitch() {
   return (
     <div className="flex flex-col">
       <h1 className="text-2xl font-press-start text-red-600 text-left pl-10">
-        Top Rated Nintendo Switch
+        Top Rated SNES
       </h1>
       <div className="grid grid-cols-5 transition-colors duration-300 dark:bg-gray-800 font-press-start max-w-3xl">
         {topSwitch &&
