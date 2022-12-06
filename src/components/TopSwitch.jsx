@@ -21,9 +21,9 @@ function TopSwitch() {
   return (
     <div className="flex flex-col">
       <h1 className="text-2xl font-press-start text-red-600 text-left pl-10">
-        Highest Rated Nintendo Switch Games
+        Top Rated Nintendo Switch
       </h1>
-      <div className="grid grid-cols-5 transition-colors duration-300 dark:bg-gray-800 h-screen font-press-start h-fit max-w-3xl">
+      <div className="grid grid-cols-5 transition-colors duration-300 dark:bg-gray-800 font-press-start max-w-3xl">
         {topSwitch &&
           topSwitch.map((switchgame) => (
             <div className="py-2 pl-10 w-44 h-full">

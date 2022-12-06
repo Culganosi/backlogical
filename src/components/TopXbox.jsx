@@ -21,7 +21,7 @@ function TopXbox({ games }) {
   return (
     <div className="flex flex-col items-start">
       <h1 className="text-2xl font-press-start text-green-600">
-        Highest Rated Xbox Games
+        Top Rated Xbox
       </h1>
       <div className="grid grid-cols-5 transition-colors duration-300 dark:bg-gray-800 font-press-start max-w-3xl">
         {topXbox &&
